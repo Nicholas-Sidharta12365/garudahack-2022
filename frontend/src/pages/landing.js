@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
+import RegisterUser from './registerUser';
 
 const landing = () => {
   return (
@@ -11,7 +13,11 @@ const landing = () => {
             <div className="place-self-center">
               <span className="text-6xl text-white">Get your mental health checked with our mental health professionals</span>
               <div className="text-3xl mt-8 text-black">Join us by a click of a button</div>
-              <button className="place-self-center border-2 bg-blue-700 text-white rounded-full py-3 px-12 border-white mt-8">JOIN US</button>
+              <Link to="/register">
+              <button className="place-self-center border-2 bg-blue-700 text-white rounded-full py-3 px-12 border-white mt-8" >JOIN US</button>
+              </Link>
+             
+
             </div>
             <img src="https://media.istockphoto.com/photos/doctor-writing-a-medical-prescription-picture-id1319031310?k=20&m=1319031310&s=612x612&w=0&h=wy85xfbBKEtnF0XNVKt1v7DSvUBybjBUsJbrJNkskTY=" alt="" className="rounded-lg w-full" />
         </div>

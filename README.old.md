@@ -1,1 +1,0 @@
-# garudahack-2022
