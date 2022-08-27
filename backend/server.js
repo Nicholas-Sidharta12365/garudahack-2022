@@ -1,7 +1,11 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+
+//should this be 5000 or 3000? ran into SSL protocol error
 const port = 5000 || process.env.PORT;
+
+
 const { v4: uuidv4 } = require("uuid");
 const dbConnect = require("./db/mongoose")
 const AccessToken = require("twilio").jwt.AccessToken;
