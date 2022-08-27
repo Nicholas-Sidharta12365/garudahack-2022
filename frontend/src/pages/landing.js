@@ -7,7 +7,7 @@ const landing = () => {
     <div className='font-roboto bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-full bg-scroll'>
         <div className="bg-black grid grid-cols-2 py-6 px-16">
             <div className="text-xl text-white">LOGO</div>
-            <div className="text-right text-white">Sign In</div>
+            <button className="text-right text-white">Sign In</button>
         </div>
         <div className="grid grid-cols-2 p-8 gap-4">
             <div className="place-self-center">
