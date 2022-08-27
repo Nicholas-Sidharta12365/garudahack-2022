@@ -21,9 +21,7 @@ function LoginPage() {
     <div>
     <LoginButton 
     leftMessage="Hello There!"
-    leftSubmessage="Come join us today!"
     rightMessage="Sign in to Google"
-    leftSign="SIGN UP"
     rightSign="SIGN IN"
     />
     </div>
