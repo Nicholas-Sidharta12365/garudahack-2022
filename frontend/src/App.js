@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import Logout from './pages/Logout';
-//import Mainvideo from './components/main';
+import Mainvideo from './components/videocomp/Main';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path='/profile' element={<Profile />}/>
         <Route path='/chat' element={<Chat />}/>
         <Route path='/logout' element={<Logout />}/>
-        
+        <Route path='/mainvideo' element={<Mainvideo />}/>
       </Routes>
     </Router>
     </>
