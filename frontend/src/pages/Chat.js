@@ -2,6 +2,8 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import Footer from '../components/Footer';
 
+//use twilio api and room name is 
+
 
 
 function Chat() {
@@ -42,7 +44,10 @@ function Chat() {
 
             <br />
             <p className="text-sm">Hello World</p>
-
+            
+                <button>Video</button>
+            
+            
         </div>
         <Footer />
       </div>
