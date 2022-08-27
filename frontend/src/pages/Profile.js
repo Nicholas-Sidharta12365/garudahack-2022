@@ -38,7 +38,7 @@ function Profile() {
         <div className="p-7 text-2xl font-semibold flex-1 h-screen font-roboto grid grid-cols-1 place-content-start bg-gradient-to-r from-cyan-500 to-blue-500">
             <div className="text-center text-4xl font-bold text-white bg-blue-900 p-4">Your Profile</div>
             <div className=" bg-white pt-8">
-                <Image />
+                <Image source="https://i.ytimg.com/vi/R39M9WtdKPg/maxresdefault.jpg"/>
             </div>
             <div className="grid grid-cols-2 px-16 pt-8 pb-8 bg-white">
                 <hr className="border border-black border-t-4 w-11/12"></hr>
