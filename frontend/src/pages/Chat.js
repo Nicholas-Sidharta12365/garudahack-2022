@@ -39,8 +39,10 @@ function Chat() {
 
             <br />
             <p className="text-sm">Hello World</p>
-            
+            <Link to="/mainvideo">
                 <button>Video</button>
+            </Link>
+                
             
             
         </div>

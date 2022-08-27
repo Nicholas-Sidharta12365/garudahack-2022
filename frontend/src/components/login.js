@@ -16,15 +16,27 @@ const Login = (props) => {
     const uid = res.googleId
     const name = res.profileObj.name
 
-    const response = await axiosInstance.post(`http://localhost:5000/login`, {
-      uid, name
-    })
+    if (props.auth === "user") {
+      const response = await axiosInstance.post(`http://localhost:5000/login`, {
+        uid, name
+      })
 
-    const accessToken = response.data.token
-    localStorage.setItem("access-token", accessToken)
+      const accessToken = response.data.token
+      localStorage.setItem("access-token", accessToken)
 
-    console.log("Login success")
-    navigate("/home")
+      console.log("Login success")
+      navigate("/home")
+    } else if (props.auth === "therapist") {
+      const response = await axiosInstance.post(`http://localhost:5000/join`, {
+        uid, name
+      })
+
+      const accessToken = response.data.token
+      localStorage.setItem("access-token", accessToken)
+
+      console.log("Login success")
+      navigate("/home")
+    }
   }
 
   const onFailure = (res) => {
