@@ -10,6 +10,7 @@ const loginPage = () => {
         rightMessage="Sign In or Register"
         leftSign="SIGN IN"
         rightSign="NEXT"
+        auth="user"
     />
     </>
   )

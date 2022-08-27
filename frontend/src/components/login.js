@@ -1,26 +1,32 @@
 import React from 'react'
 import { GoogleLogin } from 'react-google-login';
+import { useNavigate } from 'react-router-dom'
 const axios = require('axios').default;
 
 const clientId = "762325933605-iea1fql7vkqmviqnp4q2935muoudinnp.apps.googleusercontent.com"
 
+const axiosInstance = axios.create({
+  withCredentials: true
+})
 
-const login = (props) => {
-  const onSuccess = (res) => {
+const Login = (props) => {
+  const navigate = useNavigate()
+  const onSuccess = async (res) => {
     const token = res.tokenId
     const uid = res.googleId
     const name = res.profileObj.name
 
-    axios.post(`http://localhost:5000/login`, {
+    const response = await axiosInstance.post(`http://localhost:5000/login`, {
       uid, name
-    }).then((res) => {
-      console.log(res)
     })
 
-    axios.post(`http://localhost:5000/auth`).then((res) => {
-      console.log(res)
-    })
+    const accessToken = response.data.token
+    localStorage.setItem("access-token", accessToken)
+
+    console.log("Login success")
+    navigate("/home")
   }
+
   const onFailure = (res) => {
     console.log("login failed")
   }
@@ -54,7 +60,7 @@ const login = (props) => {
   )
 }
 
-export default login
+export default Login
 
 // import { GoogleLogin } from 'react-google-login';
 

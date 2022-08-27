@@ -7,10 +7,11 @@ const loginPage = () => {
     <Login 
         leftMessage="Ready to Begin?"
         leftSubmessage="Help people get through mental troubles"
-        rightMessage="Create an Account"
+        rightMessage="Sign In or Register"
         leftSign="SIGN IN"
         rightSign="JOIN"
         hide="hidden"
+        auth="therapist"
     />
     </>
   )
