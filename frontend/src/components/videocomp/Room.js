@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Participant from './Participant';
+import './Main.scss';
 
 class Room extends Component {
     compoonentDidMount() {

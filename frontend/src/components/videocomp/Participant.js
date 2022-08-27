@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Track from './Track';
+import './Main.scss';
 
 class Participant extends Component {
     constructor(props) {

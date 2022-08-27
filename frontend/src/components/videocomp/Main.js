@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import './Main.scss';
 import Room from './Room';
 const {connect} = require('twilio-video');
+
 
 class Main extends Component {
     constructor(props) {
@@ -20,7 +22,7 @@ class Main extends Component {
 
     async joinRoom() {
         try {
-          const response = await fetch(`https://localhost:5000/call?identity=${this.state.identity}`);
+          const response = await fetch(`https://localhost:5000?identity=${this.state.identity}`);
           const data = await response.json();
           const room = await connect(data.accessToken, {
             name: 'cool-room',

@@ -1,0 +1,108 @@
+.app {
+    padding: .75vw;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .lobby {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 1.25em;
+  }
+  
+  .participants {
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    margin-left: -.75vw;
+  }
+  
+  .participant {
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 8px;
+    margin-left: .75vw;
+    margin-bottom: .75vw;
+    width: 23.5vw;
+    overflow: hidden;
+    height: 50vh;
+    -webkit-mask-image: -webkit-radial-gradient(white, black); 
+    display: flex;
+    justify-content: center;
+  }
+  
+  .identity {
+    position: absolute;
+    left: 0px;
+    bottom: 15px;
+    color: white;
+    padding-left: 15px;
+    box-sizing: border-box;
+    z-index: 10;
+  }
+  
+  video {
+    display: block;
+    box-shadow: 0px 0px 15px 5px #ddd;
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+  
+  button {
+    background-color: #fe019a;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    width: 200px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  button:disabled {
+    opacity: .4;
+    cursor:initial;
+  }
+  
+  #leaveRoom {
+    margin-top: 25px;
+    margin-left: 0;
+  }
+  
+  input {
+    padding-bottom: 5px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #555;
+    margin-bottom: 25px;
+    width: 200px;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 0;
+  }
+  
+  @media (max-width: 1048px) {
+    .app {
+      padding: 1vw;
+    }
+  
+    .participant {
+      width: 47vw;
+      margin-top: 1vw;
+      margin-bottom: 1vw;
+      margin-left: 2vw;
+      height: 42vh;
+    }
+  
+    @media (orientation:landscape) {
+      .participant {
+        width: 48vw;
+        margin-left: 1vw;
+        height: 96vh;
+      }
+    }
+  
+  }
