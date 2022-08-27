@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import Logout from "../components/logout";
 import Therapists from "../components/therapists";
 
 
@@ -22,12 +23,8 @@ function Home() {
                         Chat
                     </button>
                 </Link>
-
-                <Link to="/logout">
-                    <button className="py-2 px-3 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm text-center mr-2 mb-2">
-                        Logout
-                    </button>
-                </Link>
+                
+                <Logout/>
                 
                 
             </div>

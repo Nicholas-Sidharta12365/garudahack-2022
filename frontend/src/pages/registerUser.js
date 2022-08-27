@@ -4,14 +4,13 @@ import Login from '../components/login'
 const loginPage = () => {
   return (
     <>
-    <Login 
-        leftMessage="Ready to Begin?"
-        leftSubmessage="Help people get through mental troubles"
+    <Login
+        leftMessage="Welcome Back!"
+        leftSubmessage="What could we do for you today?"
         rightMessage="Sign In or Register"
         leftSign="SIGN IN"
-        rightSign="JOIN"
-        hide="hidden"
-        auth="therapist"
+        rightSign="NEXT"
+        auth="user"
     />
     </>
   )

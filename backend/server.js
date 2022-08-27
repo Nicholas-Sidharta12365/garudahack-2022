@@ -11,6 +11,7 @@ const dbConnect = require("./db/mongoose")
 const AccessToken = require("twilio").jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
 const jwt = require('jsonwebtoken')
+const Cookies = require('cookies')
 
 // DB
 const users = require('./models/users')
@@ -18,9 +19,17 @@ const therapist = require('./models/therapist')
 const chatSession = require('./models/chatSession')
 const videoSession = require('./models/videoSession')
 
+const corsOptions = {
+  //To allow requests from client
+  origin: [
+    "http://localhost:3000",
+  ],
+  credentials: true,
+  exposedHeaders: ["set-cookie"],
+};
 
 var cors = require('cors');
-app.use(cors());
+app.use(cors(corsOptions));
 
 // use the Express JSON middleware
 app.use(express.json());
@@ -89,7 +98,9 @@ app.post("/call", async (req, res) => {
 
 app.post("/auth", async(req, res) => {
   const header = req.header
-  console.log(header)
+  const cookies = new Cookies(req, res)
+
+  const accessToken = cookies.get('access-token')
 
   res.send({
     success: true,
@@ -115,10 +126,19 @@ app.post("/login", async(req, res) => {
 
   user.tokens = [...user.tokens].concat({ token })
   await user.save()
-  res.setHeader('Cookie', [`access-token=${token}`])
+  
+  const cookies = new Cookies(req, res)
+  cookies.set('access-token', token, { httpOnly: true })
+  
   res.status(200).send({
     success: true,
+    token: token
   })
+})
+
+
+app.get("/me", auth, async(req, res) => {
+  
 })
 
 // Start the Express server
