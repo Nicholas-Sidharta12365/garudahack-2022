@@ -1,11 +1,18 @@
 require("dotenv").config();
+<<<<<<< HEAD
 //var client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_TOKEN);
 const { v4: uuidv4 } = require("uuid");
 const AccessToken = require("twilio").jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
+=======
+>>>>>>> bda07eefd0386b2744e79954e1f7372e7f5c9e86
 const express = require("express");
 const app = express();
 const port = 5000 || process.env.PORT;
+const { v4: uuidv4 } = require("uuid");
+const dbConnect = require("./db/mongoose")
+const AccessToken = require("twilio").jwt.AccessToken;
+const VideoGrant = AccessToken.VideoGrant;
 
 // use the Express JSON middleware
 app.use(express.json());
@@ -56,7 +63,7 @@ const getAccessToken = (roomName) => {
   return token.toJwt();
 };
 
-app.post("/join-room", async (req, res) => {
+app.post("/call", async (req, res) => {
   // return 400 if the request has an empty body or no roomName
   if (!req.body || !req.body.roomName) {
     return res.status(400).send("Must include roomName argument.");
@@ -67,6 +74,7 @@ app.post("/join-room", async (req, res) => {
   // generate an Access Token for a participant in this room
   const token = getAccessToken(roomName);
   res.send({
+    success: true,
     token: token,
   });
 });

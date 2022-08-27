@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-
+import Therapists from "../components/therapists";
 
 
 function Home() {
@@ -33,8 +33,25 @@ function Home() {
             </div>
             
         </div>
-        <div className="p-7 text-2xl font-semibold flex-1 h-screen">
-            <h1>Home Page :/</h1>
+        <div className="p-7 text-2xl font-semibold flex-1 h-screen font-roboto grid grid-cols-1 place-content-start bg-gradient-to-r from-cyan-500 to-blue-500">
+            <div className="text-center text-4xl font-bold text-white bg-blue-900 p-4">Find Your Therapist</div>
+            <div className="grid grid-cols-1 mt-4 overflow-y-scroll">
+                <div className='border rounded-lg bg-blue-900 grid grid-cols-3 font-roboto p-4 mt-2'>
+                    <div className="text-white place-self-center">Name</div>
+                    <div className="text-white place-self-center">Status</div>
+                    <div className="place-self-center">
+                        <div className="text-white place-self-center">Start Talking</div>
+                    </div>
+                </div>
+                <Therapists name="ooga booga" status="active" />
+                <Therapists name="error 404" status="idle" />
+                <Therapists name="ooga booga" status="active" />
+                <Therapists name="error 404" status="idle" />
+                <Therapists name="ooga booga" status="active" />
+                <Therapists name="error 404" status="idle" />
+                <Therapists name="error 404" status="idle" />
+                <Therapists name="error 404" status="idle" />
+            </div>
         </div>
       </div>
     );
