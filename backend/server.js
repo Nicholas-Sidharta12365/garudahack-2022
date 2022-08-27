@@ -1,4 +1,5 @@
 require("dotenv").config();
+//var client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_TOKEN);
 const { v4: uuidv4 } = require("uuid");
 const AccessToken = require("twilio").jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
@@ -69,6 +70,14 @@ app.post("/join-room", async (req, res) => {
     token: token,
   });
 });
+
+// serve static files from the backend directory
+app.use(express.static("./main.js"));
+
+app.get("/", (req, res) => {
+  res.sendFile("index.html", {root: __dirname});
+});
+
 // Start the Express server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
