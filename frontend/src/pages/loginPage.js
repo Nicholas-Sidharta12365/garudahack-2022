@@ -1,18 +1,28 @@
 import React from 'react'
-import Login from '../components/login'
+import LoginButton from "../components/login"
+import LogoutButton from "../components/logout"
+import { useEffect } from 'react'
+import { gapi } from "gapi-script"
 
-const loginPage = () => {
+const clientId = "762325933605-iea1fql7vkqmviqnp4q2935muoudinnp.apps.googleusercontent.com"
+
+
+function LoginPage() {
+  useEffect(() => {
+    function start() {
+      gapi.client.init({
+        clientId: clientId,
+        scope: ""
+      })
+    };
+    gapi.load('client:auth2', start)
+  })
   return (
-    <>
-    <Login
-      leftMessage="Hello There!"
-      leftSubmessage="Come join us today!"
-      rightMessage="Sign in to AppName"
-      leftSign="SIGN UP"
-      rightSign="SIGN IN"
-    />
-    </>
+    <div>
+    <LoginButton />
+    <LogoutButton />
+    </div>
   )
 }
 
-export default loginPage
+export default LoginPage
