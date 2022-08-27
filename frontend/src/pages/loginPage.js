@@ -20,7 +20,6 @@ function LoginPage() {
   return (
     <div>
     <LoginButton />
-    <LogoutButton />
     </div>
   )
 }

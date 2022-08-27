@@ -7,7 +7,7 @@ const loginPage = () => {
     <Login
         leftMessage="Welcome Back!"
         leftSubmessage="What could we do for you today?"
-        rightMessage="Create an Account"
+        rightMessage="Sign In or Register"
         leftSign="SIGN IN"
         rightSign="NEXT"
     />

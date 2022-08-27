@@ -10,6 +10,12 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    tokens: [{
+        token: {
+            type: String,
+            required: true,
+        }
+    }]
 })
 
 module.exports = mongoose.models.User || mongoose.model('User', userSchema)
