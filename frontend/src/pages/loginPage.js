@@ -19,8 +19,13 @@ function LoginPage() {
   })
   return (
     <div>
-    <LoginButton />
-    <LogoutButton />
+    <LoginButton 
+    leftMessage="Hello There!"
+    leftSubmessage="Come join us today!"
+    rightMessage="Sign in to Google"
+    leftSign="SIGN UP"
+    rightSign="SIGN IN"
+    />
     </div>
   )
 }

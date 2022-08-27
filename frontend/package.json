@@ -12,11 +12,8 @@
     "gapi-script": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-firebase-hooks": "^5.0.3",
-=======
     "react-google-login": "^5.2.2",
->>>>>>> 3222fbda7ba7a58d957d5cf68dd41a38f1f5a090
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "twilio-client": "^1.14.0",
