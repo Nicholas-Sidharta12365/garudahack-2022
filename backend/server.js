@@ -132,6 +132,11 @@ app.post("/login", async(req, res) => {
   })
 })
 
+
+app.get("/me", auth, async(req, res) => {
+  
+})
+
 // Start the Express server
 app.listen(port, 'localhost', () => {
   console.log(`Server is running on port ${port}`);
