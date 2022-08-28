@@ -34,7 +34,9 @@ class Main extends Component {
             video: true
           });
       
+
           this.setState({ room: room });
+
         } catch(err) {
           console.log(err);
         }
