@@ -36,7 +36,7 @@ function Chat() {
 
             <br />
             <Link to="/mainvideo">
-                <button className="grid place-items-start hover:place-items-center">Video</button>
+                <button>Video</button>
             </Link>
         </div>
       </div>
