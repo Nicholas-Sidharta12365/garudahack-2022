@@ -34,11 +34,7 @@ const landing = () => {
         </div>
         <div className="grid grid-cols-1 py-8 px-4">
         <div className="text-4xl text-center text-white font-bold">WATCH OUR DEMO</div>
-<<<<<<< HEAD
-        <div className="place-self-center m-16"><iframe width="560" height="315" src="https://youtu.be/9XOAWAaSu90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-=======
         <div className="place-self-center m-16"><iframe width="768" height="543" src="https://www.youtube.com/embed/9XOAWAaSu90" title="GHacks Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
->>>>>>> 58eb7db77fbbcb64eada7cc08dce376ba7a2c0d5
         </div>
         <div className="bg-black p-16 grid grid-cols-2">
           <div className="text-white font-semibold text-2xl">
