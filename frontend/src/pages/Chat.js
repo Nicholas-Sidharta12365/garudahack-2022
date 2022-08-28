@@ -58,7 +58,8 @@ function Chat() {
                         <Therapists name="error 404" status="idle" cols={2} hide="hidden" />
                     </div>
                 </div>
-            </div>
+        <Footer />
+      </div>
       </>
     );
   }
