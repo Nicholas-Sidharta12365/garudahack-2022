@@ -1,9 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import Footer from '../components/Footer';
 import Logout from "../components/logout";
-
-//use twilio api and room name is 
 
 function Chat() {
     return (
@@ -38,15 +35,10 @@ function Chat() {
             <h1>Chat Page</h1>
 
             <br />
-            <p className="text-sm">Hello World</p>
             <Link to="/mainvideo">
-                <button>Video</button>
+                <button className="grid place-items-start hover:place-items-center">Video</button>
             </Link>
-                
-            
-            
         </div>
-        <Footer />
       </div>
     );
   }
