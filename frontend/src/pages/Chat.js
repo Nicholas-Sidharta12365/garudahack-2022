@@ -28,9 +28,7 @@ function Chat() {
                     </button>
                 </Link>
 
-                <Logout/>
-                
-                
+                <Logout/> 
             </div>
             
         </div>
@@ -41,12 +39,8 @@ function Chat() {
             <p className="text-sm">Hello World</p>
             <Link to="/mainvideo">
                 <button>Video</button>
-            </Link>
-                
-            
-            
+            </Link>            
         </div>
-        <Footer />
       </div>
     );
   }

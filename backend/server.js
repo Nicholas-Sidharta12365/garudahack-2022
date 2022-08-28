@@ -12,6 +12,7 @@ const AccessToken = require("twilio").jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
 const jwt = require('jsonwebtoken')
 const Cookies = require('cookies')
+const auth = require('./middleware/auth')
 
 // DB
 const users = require('./models/users')
@@ -136,6 +137,53 @@ app.post("/login", async(req, res) => {
   })
 })
 
+app.post("/join", async(req, res) => {
+  const { name, uid } = req.body
+  if (!uid || !name) {
+    return res.status(400).send("Must include user id and name ");
+  }
+
+  let user = await therapist.findOne({ uid })
+  if (!user) {
+    user = new therapist({
+      uid,
+      name,
+      isOnline: true,
+    })
+    await user.save()
+  }
+  
+  const token = jwt.sign({ uid }, process.env.JWT_SECRET, { expiresIn: 60 * 60 * 24 * 30 })
+
+  user.tokens = [...user.tokens].concat({ token })
+  await user.save()
+  
+  const cookies = new Cookies(req, res)
+  cookies.set('access-token', token, { httpOnly: true })
+  
+  res.status(200).send({
+    success: true,
+    token: token
+  })
+})
+
+app.get("/availableTherapist", auth, async(req, res) => {
+
+  try {
+    therapists = await therapist.find({ isOnline: true })
+
+    console.log(therapists)
+    res.send({
+      success: true,
+      therapists
+    })
+  } catch(e) {
+    res.status(400).send({
+      success: false,
+      message: "Fetch error"
+    })
+  }
+})
 
 app.get("/me", auth, async(req, res) => {
   

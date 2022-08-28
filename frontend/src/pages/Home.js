@@ -1,10 +1,23 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import {Link} from 'react-router-dom';
 import Logout from "../components/logout";
 import Therapists from "../components/therapists";
 
 
 function Home() {
+    const [therapists, setTherapists] = useState([])
+
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem("access-token")}` }
+    };
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/availableTherapist`, config).then((res) => {
+            setTherapists(res.data.therapists)
+        })
+    }, [])
+
     return (
       <div className="flex">
         <div className={`w-25 p-4 pt-16 h-screen bg-dark-purple`}>
@@ -31,23 +44,23 @@ function Home() {
             
         </div>
         <div className="p-7 text-2xl font-semibold flex-1 h-screen font-roboto grid grid-cols-1 place-content-start bg-gradient-to-r from-cyan-500 to-blue-500">
-            <div className="text-center text-4xl font-bold text-white bg-blue-900 p-4">Find Your Therapist</div>
-            <div className="grid grid-cols-1 mt-4 overflow-y-scroll">
-                <div className='border rounded-lg bg-blue-900 grid grid-cols-3 font-roboto p-4 mt-2'>
+            <div className="text-center text-4xl font-bold text-white bg-[#fa1195] p-4 mx-4 rounded-lg">Find Your Therapist</div>
+            <div className="grid grid-cols-1 mt-4 overflow-y-scroll px-4">
+                <div className='border-none rounded-lg bg-[#fa1195] grid grid-cols-3 font-roboto p-4 mt-2'>
                     <div className="text-white place-self-center">Name</div>
                     <div className="text-white place-self-center">Status</div>
                     <div className="place-self-center">
                         <div className="text-white place-self-center">Start Talking</div>
                     </div>
                 </div>
-                <Therapists name="ooga booga" status="active" cols="3" />
-                <Therapists name="error 404" status="idle" cols="3" />
-                <Therapists name="ooga booga" status="active" cols="3" />
-                <Therapists name="error 404" status="idle" cols="3" />
-                <Therapists name="ooga booga" status="active" cols="3" />
-                <Therapists name="error 404" status="idle" cols="3" />
-                <Therapists name="error 404" status="idle" cols="3" />
-                <Therapists name="error 404" status="idle" cols="3" />
+
+                {
+                    therapists.map((therapist) => {
+                        return (
+                            <Therapists key={therapist.id} name={therapist.name} status="active" cols="3" />
+                        )
+                    })
+                }
             </div>
         </div>
       </div>

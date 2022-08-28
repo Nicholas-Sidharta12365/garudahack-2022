@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Main.scss';
 import Room from './Room';
+import axios from 'axios'
 const {connect} = require('twilio-video');
 
 
@@ -22,9 +23,12 @@ class Main extends Component {
 
     async joinRoom() {
         try {
-          const response = await fetch(`https://localhost:5000?identity=${this.state.identity}`);
-          const data = await response.json();
-          const room = await connect(data.accessToken, {
+          const response = await axios.post(
+            "http://localhost:5000/call", {
+                 roomName: "test"
+            });
+          const data = response.data.token
+          const room = await connect(data, {
             name: 'cool-room',
             audio: true,
             video: true
@@ -62,7 +66,7 @@ class Main extends Component {
                      ref={this.inputRef}
                      onClick={this.removePlaceholderText}
                      placeholder="What's your name?"/>
-                  <button disabled={disabled} onClick={this.joinRoom}>Join Room</button>
+                  <button disabled={disabled} onClick={this.joinRoom}>Make a Call</button>
                 </div>
               : <Room returnToLobby={this.returnToLobby} room={this.state.room} />
             }
