@@ -50,7 +50,6 @@ function Chat() {
                         </div>
                 </div>
             </div>
-        <Footer />
       </div>
       </>
     );
