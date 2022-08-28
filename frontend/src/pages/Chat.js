@@ -34,7 +34,6 @@ function Chat() {
             
         </div>
         <div className="pr-80 pl-5 pt-5 text-2xl font-semibold">
-<<<<<<< HEAD
             <h1>Chat Page</h1>
 
             <br />
@@ -42,8 +41,6 @@ function Chat() {
                 <button>Video</button>
             </Link>
         </div>
-=======
->>>>>>> e58e14bd8449270110e8687a36c0b1d6a739d47f
             <div className="p-7 text-2xl font-semibold flex-1 h-screen font-roboto grid grid-cols-1 place-content-start bg-gradient-to-r from-cyan-500 to-blue-500">
                 <div className="text-center text-4xl font-bold text-white bg-blue-900 p-4">Session History</div>
                     <div className="grid grid-cols-1 mt-4 overflow-y-scroll">
