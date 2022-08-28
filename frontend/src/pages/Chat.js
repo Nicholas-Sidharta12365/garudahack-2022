@@ -6,7 +6,7 @@ import Therapists from "../components/therapists";
 function Chat() {
     return (
         <>
-      <div className="flex w-screen">
+        <div className="flex w-screen">
         <div className={`w-30 p-4 pt-16 h-screen bg-dark-purple`}>
             <div className="flex flex-col space-y-10">
                 <Link to="/home">
@@ -27,9 +27,7 @@ function Chat() {
                     </button>
                 </Link>
 
-                <Logout/>
-                
-                
+                <Logout/> 
             </div>
             
         </div>
@@ -58,8 +56,8 @@ function Chat() {
                         <Therapists name="error 404" status="idle" cols={2} hide="hidden" />
                     </div>
                 </div>
-        <Footer />
-      </div>
+            </div>
+      
       </>
     );
   }

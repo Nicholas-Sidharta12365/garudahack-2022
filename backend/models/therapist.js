@@ -14,7 +14,13 @@ const therapistSchema = new mongoose.Schema({
         type: Boolean,
         required: true,
         default: true,
-    }
+    },
+    tokens: [{
+        token: {
+            type: String,
+            required: true,
+        }
+    }]
 })
 
 module.exports = mongoose.models.Therapist || mongoose.model('Therapist', therapistSchema)
