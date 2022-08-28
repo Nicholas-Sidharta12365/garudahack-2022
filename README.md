@@ -1,1 +1,3 @@
-# GarudaHacks 2022
+# PsyConnect
+
+## Alfonsus R | Julian | Klauss | Nicholas S
