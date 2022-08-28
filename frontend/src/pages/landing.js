@@ -34,7 +34,7 @@ const landing = () => {
         </div>
         <div className="grid grid-cols-1 py-8 px-4">
         <div className="text-4xl text-center text-white font-bold">WATCH OUR DEMO</div>
-        <div className="place-self-center m-16"><iframe width="560" height="315" src="https://www.youtube.com/embed/34Ig3X59_qA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div className="place-self-center m-16"><iframe width="560" height="315" src="https://youtu.be/9XOAWAaSu90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         </div>
         <div className="bg-black p-16 grid grid-cols-2">
           <div className="text-white font-semibold text-2xl">
