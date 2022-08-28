@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Main.scss';
 import Room from './Room';
+import axios from 'axios';
 const {connect} = require('twilio-video');
 
 
@@ -22,15 +23,25 @@ class Main extends Component {
 
     async joinRoom() {
         try {
-          const response = await fetch(`https://localhost:5000?identity=${this.state.identity}`);
-          const data = await response.json();
-          const room = await connect(data.accessToken, {
-            name: 'cool-room',
-            audio: true,
+          //const response = await fetch(`http://localhost:3000/call?identity=${this.state.identity}`);
+          
+          const response = await axios.post(
+            "http://localhost:5000/call", {
+                roomName: "test"
+            }
+          )
+          
+          const data = response.data.token;
+          
+          const room = await connect(data, {
+            name: 'cool-room', 
+            audio: true, 
             video: true
           });
       
+
           this.setState({ room: room });
+
         } catch(err) {
           console.log(err);
         }
