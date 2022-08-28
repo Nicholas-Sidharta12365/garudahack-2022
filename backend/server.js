@@ -96,16 +96,16 @@ app.post("/call", async (req, res) => {
   });
 });
 
-app.post("/auth", async(req, res) => {
-  const header = req.header
-  const cookies = new Cookies(req, res)
+//app.post("/auth", async(req, res) => {
+  //const header = req.header
+  //const cookies = new Cookies(req, res)
 
-  const accessToken = cookies.get('access-token')
+  //const accessToken = cookies.get('access-token')
 
-  res.send({
-    success: true,
-  })
-})
+  //res.send({
+  //  success: true,
+  //})
+//})
 
 app.post("/login", async(req, res) => {
   const { name, uid } = req.body
@@ -137,9 +137,9 @@ app.post("/login", async(req, res) => {
 })
 
 
-app.get("/me", auth, async(req, res) => {
+//app.get("/me", auth, async(req, res) => {
   
-})
+//})
 
 // Start the Express server
 app.listen(port, 'localhost', () => {
